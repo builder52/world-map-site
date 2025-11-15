@@ -15,16 +15,18 @@
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
-    // 1. создаём карту и задаём стартовую позицию
-    const map = L.map('map').setView([20, 0], 2); // центр мира
+    console.log('script start'); // просто проверка, что код вообще запустился
 
-    // 2. добавляем тёмный слой (2–3 цвета)
+    // 1. создаём карту
+    const map = L.map('map').setView([20, 0], 2);
+
+    // 2. тёмный слой
     L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
       maxZoom: 19,
       attribution: '© OpenStreetMap contributors, © CARTO'
     }).addTo(map);
 
-    // 3. кастомная иконка для покровска
+    // 3. кастомная иконка
     const pokrovskIcon = L.icon({
       iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fwill-russia-capture-pokrovsk-by-ppynW6JKABNP.jpg&w=256&q=100',
       iconSize: [20, 20],
@@ -32,7 +34,7 @@
       popupAnchor: [0, -20]
     });
 
-    // 4. список меток
+    // 4. маркеры
     const markers = [
       {
         name: 'Will Russia capture all of Pokrovsk by...?',
@@ -42,4 +44,29 @@
       },
       {
         name: 'Kalshi',
-        coords: [38.9072, -77.0369]
+        coords: [38.9072, -77.0369],
+        link: 'https://kalshi.com',
+        icon: null
+      },
+      {
+        name: 'Infinex',
+        coords: [37.7749, -122.4194],
+        link: 'https://infinex.io',
+        icon: null
+      }
+    ];
+
+    markers.forEach(m => {
+      const opts = {};
+      if (m.icon) opts.icon = m.icon;
+
+      const marker = L.marker(m.coords, opts).addTo(map);
+      marker.bindPopup(
+        `<b>${m.name}</b><br><a href="${m.link}" target="_blank">Перейти на сайт</a>`
+      );
+    });
+
+    console.log('markers added'); // ещё одна проверка
+  </script>
+</body>
+</html>
