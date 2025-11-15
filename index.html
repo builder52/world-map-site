@@ -8,6 +8,15 @@
   <style>
     html, body { height: 100%; margin: 0; }
     #map { height: 100vh; width: 100%; }
+
+    /* ✨ свечение иконок (без движения) */
+    .glow-icon {
+      transition: filter 0.25s ease;
+      filter: drop-shadow(0 0 4px #00eaff66);
+    }
+    .glow-icon:hover {
+      filter: drop-shadow(0 0 8px #00eaff) drop-shadow(0 0 14px #00eaff);
+    }
   </style>
 </head>
 <body>
@@ -15,7 +24,7 @@
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
-    console.log('script start'); // просто проверка, что код вообще запустился
+    console.log('script start'); // проверка, что скрипт запустился
 
     // 1. создаём карту
     const map = L.map('map').setView([20, 0], 2);
@@ -56,32 +65,28 @@
       }
     ];
 
-markers.forEach(m => {
-  const opts = {};
-  if (m.icon) opts.icon = m.icon;
+    // 5. рисуем маркеры + добавляем класс для свечения
+    markers.forEach(m => {
+      const opts = {};
+      if (m.icon) opts.icon = m.icon;
 
-  const marker = L.marker(m.coords, opts).addTo(map);
+      const marker = L.marker(m.coords, opts).addTo(map);
 
-  marker.bindPopup(
-    `<b>${m.name}</b><br><a href="${m.link}" target="_blank">Go to the website</a>`
-  );
+      marker.bindPopup(
+        `<b>${m.name}</b><br><a href="${m.link}" target="_blank">Go to the website</a>`
+      );
 
-// 🔥 ТОЛЬКО подсветка (без движения)
-marker.on('mouseover', function () {
-  const el = this.getElement();
-  if (!el) return;
-  el.style.transition = '0.25s';
-  el.style.filter = 'drop-shadow(0 0 6px #00eaff) drop-shadow(0 0 12px #00eaff)';
-});
+      // добавляем класс .glow-icon к DOM-элементу маркера
+      // небольшая задержка нужна, чтобы элемент успел появиться в DOM
+      setTimeout(() => {
+        const el = marker.getElement();
+        if (el) {
+          el.classList.add('glow-icon');
+        }
+      }, 0);
+    });
 
-marker.on('mouseout', function () {
-  const el = this.getElement();
-  if (!el) return;
-  el.style.filter = 'none';
-});
-
-
-    console.log('markers added'); // ещё одна проверка
+    console.log('markers added');
   </script>
 </body>
 </html>
