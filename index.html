@@ -15,7 +15,7 @@
       filter: drop-shadow(0 0 4px #00eaff66);
     }
     .glow-icon:hover {
-      filter: drop-shadow(0 0 8px #00eaff) drop-shadow(0 0 14px #00eaff);
+      filter: drop-shadow(0 0 8px #2E5CFF) drop-shadow(0 0 14px #2E5CFF);
     }
   </style>
 </head>
@@ -73,7 +73,7 @@
       const marker = L.marker(m.coords, opts).addTo(map);
 
       marker.bindPopup(
-        `<b>${m.name}</b><br><a href="${m.link}" target="_blank">Go to the website</a>`
+        `<b>${m.name}</b><br><a href="${m.link}" target="_blank">Go to the Polymarket</a>`
       );
 
       // добавляем класс .glow-icon к DOM-элементу маркера
