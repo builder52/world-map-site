@@ -66,21 +66,18 @@ markers.forEach(m => {
     `<b>${m.name}</b><br><a href="${m.link}" target="_blank">Go to the website</a>`
   );
 
-  // 🔥 простая подсветка иконки при наведении
-  marker.on('mouseover', function () {
-    const el = this.getElement(); // официальный способ получить DOM-элемент
-    if (!el) return;
-    el.style.transition = '0.2s';
-    el.style.filter = 'drop-shadow(0 0 10px #00eaff)';
-    el.style.transform = 'scale(1.25)';
-  });
+// 🔥 ТОЛЬКО подсветка (без движения)
+marker.on('mouseover', function () {
+  const el = this.getElement();
+  if (!el) return;
+  el.style.transition = '0.25s';
+  el.style.filter = 'drop-shadow(0 0 6px #00eaff) drop-shadow(0 0 12px #00eaff)';
+});
 
-  marker.on('mouseout', function () {
-    const el = this.getElement();
-    if (!el) return;
-    el.style.filter = 'none';
-    el.style.transform = 'scale(1)';
-  });
+marker.on('mouseout', function () {
+  const el = this.getElement();
+  if (!el) return;
+  el.style.filter = 'none';
 });
 
 
