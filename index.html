@@ -13,7 +13,7 @@
   .glow-icon {
     transition: filter 0.25s ease;
     filter: drop-shadow(0 0 8px #2E5CFF);
-    border-radius: 50%;        /* 👈 делаем иконки круглыми */
+    border-radius: 50%;        /* делаем иконки круглыми */
     overflow: hidden;          /* обрезаем углы */
   }
 
@@ -31,14 +31,14 @@
 
     // 1. создаём карту
     const map = L.map('map', {
-  minZoom: 2,              // минимальный зум (самое дальнее отдаление)
-  maxZoom: 19,             // как раньше
-  maxBounds: [
-    [-85, -180],           // юго-запад карты
-    [85, 180]              // северо-восток карты
-  ],
-  maxBoundsViscosity: 1.0  // блокирует выход за край (важно!)
-}).setView([20, 0], 2);
+      minZoom: 2,              // минимальный зум (самое дальнее отдаление)
+      maxZoom: 19,             // как раньше
+      maxBounds: [
+        [-85, -180],           // юго-запад карты
+        [85, 180]              // северо-восток карты
+      ],
+      maxBoundsViscosity: 1.0  // блокирует выход за край (важно!)
+    }).setView([20, 0], 2);
 
     // 2. тёмный слой
     L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
@@ -46,7 +46,7 @@
       attribution: '© OpenStreetMap contributors, © CARTO'
     }).addTo(map);
 
-    // 3. кастомная иконка
+    // 3. кастомные иконки
     const AhmedalSharaaoutasleaderofSyriabefore2027 = L.icon({
       iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fahmed-al-sharaa-out-as-leader-of-syria-by-august-31-jw07b2UurIIh.jpg&w=96&q=100',
       iconSize: [20, 20],
@@ -54,17 +54,17 @@
       popupAnchor: [0, -20]
     });
     const AhmedalSharaaoutasleaderofSyriain2025 = L.icon({
-  iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fahmed-al-sharaa-out-as-leader-of-syria-by-august-31-jw07b2UurIIh.jpg&w=96&q=100',   // ← вставь свой URL
-  iconSize: [20, 20],
-  iconAnchor: [10, 20],
-  popupAnchor: [0, -20]
+      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fahmed-al-sharaa-out-as-leader-of-syria-by-august-31-jw07b2UurIIh.jpg&w=96&q=100',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
     });
     const AbdulMalikoutasleaderofHouthisby = L.icon({
-  iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fabdul-malik-out-as-leader-of-houthis-by-september-30-Mo5xCY5XbsZe.png&w=96&q=100',   // ← вставь свой URL
-  iconSize: [20, 20],
-  iconAnchor: [10, 20],
-  popupAnchor: [0, -20]
-});
+      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fabdul-malik-out-as-leader-of-houthis-by-september-30-Mo5xCY5XbsZe.png&w=96&q=100',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
 
     // 4. маркеры
     const markers = [
@@ -88,35 +88,36 @@
       }
     ];
 
-// 5. рисуем маркеры + добавляем класс для свечения
-const coordCounts = {};
+    // 5. рисуем маркеры + раздвигаем дубли по X
+    const coordCounts = {};
 
-markers.forEach(m => {
-  const key = m.coords.join(',');
-  const index = coordCounts[key] || 0;
-  coordCounts[key] = index + 1;
+    markers.forEach(m => {
+      const key = m.coords.join(',');
+      const index = coordCounts[key] || 0;   // какой по счёту маркер на этих координатах
+      coordCounts[key] = index + 1;
 
-  const opts = {};
-  if (m.icon) opts.icon = m.icon;
+      const opts = {};
+      if (m.icon) opts.icon = m.icon;
 
-  const marker = L.marker(m.coords, opts).addTo(map);
+      const marker = L.marker(m.coords, opts).addTo(map);
 
-  marker.bindPopup(
-    `<b>${m.name}</b><br><a href="${m.link}" target="_blank">Go to the Polymarket</a>`
-  );
+      marker.bindPopup(
+        `<b>${m.name}</b><br><a href="${m.link}" target="_blank">Go to the Polymarket</a>`
+      );
 
-  setTimeout(() => {
-    const el = marker.getElement();
-    if (!el) return;
+      // добавляем класс и сдвигаем дубликаты через margin-left
+      setTimeout(() => {
+        const el = marker.getElement();
+        if (!el) return;
 
-    el.classList.add('glow-icon');
+        el.classList.add('glow-icon');
 
-    if (index > 0) {
-      const offsetPx = 26 * index; // расстояние между иконками
-      el.style.transform = `translateX(${offsetPx}px)`;
-    }
-  }, 0);
-});
+        if (index > 0) {
+          const offsetPx = 26 * index; // расстояние между иконками в пикселях
+          el.style.marginLeft = offsetPx + 'px';
+        }
+      }, 0);
+    });
 
     console.log('markers added');
   </script>
