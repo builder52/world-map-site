@@ -101,9 +101,9 @@ markers.forEach(m => {
 
   const marker = L.marker(m.coords, opts).addTo(map);
 
-  marker.bindPopup(
-    `<b>${m.name}</b><br><a href="${m.link}" target="_blank">Go to the Polymarket</a>`
-  );
+marker.bindPopup(
+  `<a href="${m.link}" target="_blank">${m.name}</a>`
+);
 
   setTimeout(() => {
     const el = marker.getElement();
