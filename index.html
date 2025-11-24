@@ -506,7 +506,7 @@ Object.values(groupsByCoord).forEach(events => {
 // функция переключения
 function updateMarkers() {
   const z = map.getZoom();
-  if (z < 4) {
+  if (z < 2) {
     detailedMarkers.forEach(m => map.removeLayer(m));
     summaryMarkers.forEach(m => map.addLayer(m));
   } else {
