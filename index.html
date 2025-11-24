@@ -466,72 +466,72 @@
     ];
 
 // 5. рисуем маркеры + раскладываем дубликаты по кругам
-const coordCounts = {};
+    const coordCounts = {};
 
-markers.forEach(m => {
-  const key = m.coords.join(',');
-  const index = coordCounts[key] || 0;  // какой по счёту маркер на этих координатах
-  coordCounts[key] = index + 1;
+    markers.forEach(m => {
+      const key = m.coords.join(',');
+      const index = coordCounts[key] || 0;  // какой по счёту маркер на этих координатах
+      coordCounts[key] = index + 1;
 
-  const opts = {};
-  if (m.icon) opts.icon = m.icon;
+      const opts = {};
+      if (m.icon) opts.icon = m.icon;
 
-  const marker = L.marker(m.coords, opts).addTo(map);
+      const marker = L.marker(m.coords, opts).addTo(map);
 
-  marker.bindPopup(
-    `<a href="${m.link}" target="_blank">${m.name}</a>`
-  );
+      marker.bindPopup(
+        `<a href="${m.link}" target="_blank">${m.name}</a>`
+      );
 
-  setTimeout(() => {
-    const el = marker.getElement();
-    if (!el) return;
+      setTimeout(() => {
+        const el = marker.getElement();
+        if (!el) return;
 
-    el.classList.add('glow-icon');
+        el.classList.add('glow-icon');
 
-    // если это не первый маркер на этих координатах — разносим по кругам
-    if (index > 0) {
-      const RING_SIZE = 12;      // сколько иконок максимум в одном "кольце"
-      const RADIUS_STEP = 26;    // расстояние между кольцами (px)
+        // если это не первый маркер на этих координатах — разносим по кругам
+        if (index > 0) {
+          const RING_SIZE = 12;      // сколько иконок максимум в одном "кольце"
+          const RADIUS_STEP = 26;    // расстояние между кольцами (px)
 
-      const ring = Math.floor((index - 1) / RING_SIZE) + 1;  // номер круга (1,2,3,...)
-      const posInRing = (index - 1) % RING_SIZE;             // позиция внутри круга
+          const ring = Math.floor((index - 1) / RING_SIZE) + 1;  // номер круга (1,2,3,...)
+          const posInRing = (index - 1) % RING_SIZE;             // позиция внутри круга
 
-      const angle = (360 / RING_SIZE) * posInRing;           // угол в градусах
-      const radius = ring * RADIUS_STEP;                     // радиус этого круга
+          const angle = (360 / RING_SIZE) * posInRing;           // угол в градусах
+          const radius = ring * RADIUS_STEP;                     // радиус этого круга
 
-      const x = Math.cos(angle * Math.PI / 180) * radius;
-      const y = Math.sin(angle * Math.PI / 180) * radius;
+          const x = Math.cos(angle * Math.PI / 180) * radius;
+          const y = Math.sin(angle * Math.PI / 180) * radius;
 
-      el.style.marginLeft = `${x}px`;
-      el.style.marginTop = `${y}px`;
+          el.style.marginLeft = `${x}px`;
+          el.style.marginTop = `${y}px`;
+        }
+      }, 0);
+    });
+
+    // Функция для масштабирования иконок
+    function updateMarkerScale() {
+      const z = map.getZoom();
+
+      // базовая формула: чем больше зум, тем больше иконки
+      let scale = 0.7 + (z - 2) * 0.15; // при z=2 ~0.7, при z=6 ~1.3
+
+      // ограничим, чтобы не были слишком маленькими/огромными
+      if (scale < 0.5) scale = 0.5;
+      if (scale > 2)   scale = 2;
+
+      // применяем масштаб ко всем иконкам
+      document.querySelectorAll('.leaflet-marker-icon').forEach(el => {
+        el.style.transform = `scale(${scale})`;
+      });
     }
-  }, 0);
-});
 
-// Функция для масштабирования иконок
-function updateMarkerScale() {
-  const z = map.getZoom();
+    // Обновляем при каждом изменении зума
+    map.on('zoomend', updateMarkerScale);
 
-  // базовая формула: чем больше зум, тем больше иконки
-  let scale = 0.7 + (z - 2) * 0.15; // при z=2 ~0.7, при z=6 ~1.3
+    // И один раз при загрузке карты
+    updateMarkerScale();
 
-  // ограничим, чтобы не были слишком маленькими/огромными
-  if (scale < 0.5) scale = 0.5;
-  if (scale > 2)   scale = 2;
-
-  // применяем масштаб ко всем иконкам
-  document.querySelectorAll('.leaflet-marker-icon').forEach(el => {
-    el.style.transform = `scale(${scale})`;
-  });
-}
-
-// Обновляем при каждом изменении зума
-map.on('zoomend', updateMarkerScale);
-
-// И один раз при загрузке карты
-updateMarkerScale();
-
-console.log('markers added');
+    console.log('markers added');
   </script>
 </body>
 </html>
