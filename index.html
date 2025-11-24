@@ -5,51 +5,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Polymarket Geopolitics Map</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<style>
-  html, body { height: 100%; margin: 0; }
-  #map { height: 100vh; width: 100%; }
+  <style>
+    html, body { height: 100%; margin: 0; }
+    #map { height: 100vh; width: 100%; }
 
-  /* ✨ свечение иконок (без движения) */
-  .glow-icon {
-    transition: filter 0.25s ease;
-    filter: drop-shadow(0 0 8px #2E5CFF);
-    border-radius: 50%;        /* делаем иконки круглыми */
-    overflow: hidden;          /* обрезаем углы */
-  }
+    /* ✨ свечение иконок (без движения) */
+    .glow-icon {
+      transition: filter 0.25s ease;
+      filter: drop-shadow(0 0 8px #2E5CFF);
+      border-radius: 50%;        /* делаем иконки круглыми */
+      overflow: hidden;          /* обрезаем углы */
+    }
 
-  .glow-icon:hover {
-    filter: drop-shadow(0 0 8px #2E5CFF) drop-shadow(0 0 14px #2E5CFF);
-  }
-  /* 🎨 цвет окна popup */
-.leaflet-popup-content-wrapper {
-  background: #2E5CFF;
-  color: white;
-  border-radius: 10px;
-  padding: 8px;
-}
+    .glow-icon:hover {
+      filter: drop-shadow(0 0 8px #2E5CFF) drop-shadow(0 0 14px #2E5CFF);
+    }
 
-/* 🎨 цвет «хвостика» окна */
-.leaflet-popup-tip {
-  background: #2E5CFF;
-}
+    /* 🎨 цвет окна popup */
+    .leaflet-popup-content-wrapper {
+      background: #2E5CFF;
+      color: white;
+      border-radius: 10px;
+      padding: 8px;
+    }
 
-/* 🎨 удаляем отступы по умолчанию */
-.leaflet-popup-content {
-  margin: 6px 8px;
-}
+    /* 🎨 цвет «хвостика» окна */
+    .leaflet-popup-tip {
+      background: #2E5CFF;
+    }
 
-/* 🎨 делаем ссылку белой */
-.leaflet-popup-content a {
-  color: white;
-  font-weight: bold;
-  text-decoration: underline; /* можешь убрать */
-}
+    /* 🎨 удаляем отступы по умолчанию */
+    .leaflet-popup-content {
+      margin: 6px 8px;
+    }
 
-/* 🎨 делаем крестик (close button) белым */
-.leaflet-popup-close-button {
-  color: white !important;
-}
-</style>
+    /* 🎨 делаем ссылку белой */
+    .leaflet-popup-content a {
+      color: white;
+      font-weight: bold;
+      text-decoration: underline; /* можешь убрать */
+    }
+
+    /* 🎨 делаем крестик (close button) белым */
+    .leaflet-popup-close-button {
+      color: white !important;
+    }
+
+    /* ✨ кастомные иконки */
+    .custom-icon {
+      width: 20px;
+      height: 20px;
+      background-size: cover;
+      border-radius: 50%;
+      transition: transform 0.25s ease;
+    }
+  </style>
 </head>
 <body>
   <div id="map"></div>
@@ -76,198 +86,18 @@
     }).addTo(map);
 
     // 3. кастомные иконки
-    const eunatocountryannouncespeacekeepingforceinukraine = L.icon({
+    const eunatocountryannouncespeacekeepingforceinukraine = {
       iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Feunato-country-announces-peacekeeping-force-in-ukraine-FGU2DfeSjhiB.jpg&w=96&q=100',
-      iconSize: [20, 20],
-      iconAnchor: [10, 20],
-      popupAnchor: [0, -20]
-    });
-    const natoeutroopsfightinginukraineby = L.icon({
+      className: 'custom-icon' // класс для CSS
+    };
+    const natoeutroopsfightinginukraineby = {
       iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fnatoeu-troops-fighting-in-ukraine-in-2025-ed2fIguRcJLj.jpg&w=96&q=100',
-      iconSize: [20, 20],
-      iconAnchor: [10, 20],
-      popupAnchor: [0, -20]
-    });
-    const putinandzelenskyyshakehandsbyjune30 = L.icon({
+      className: 'custom-icon'
+    };
+    const putinandzelenskyyshakehandsbyjune30 = {
       iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fputin-and-zelenskyy-shake-hands-by-october-31-AXm08sevgnUp.jpg&w=96&q=100',
-      iconSize: [20, 20],
-      iconAnchor: [10, 20],
-      popupAnchor: [0, -20]
-    });
-    const putinandzelenskyyshakehandsin2025 = L.icon({
-      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fputin-and-zelenskyy-shake-hands-by-october-31-AXm08sevgnUp.jpg&w=96&q=100',
-      iconSize: [20, 20],
-      iconAnchor: [10, 20],
-      popupAnchor: [0, -20]
-    });
-    const russiaxukrainebufferzoneagreementbydecember31 = L.icon({
-      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Frussia-x-ukraine-buffer-zone-by-september-30-CL3auep5Q1qt.jpg&w=96&q=100',
-      iconSize: [20, 20],
-      iconAnchor: [10, 20],
-      popupAnchor: [0, -20]
-    });
-    const russiaxukraineceasefirebyendof2026 = L.icon({
-      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Frussia-x-ukraine-ceasefire-in-2025-w2voYOygx80B.jpg&w=96&q=100',
-      iconSize: [20, 20],
-      iconAnchor: [10, 20],
-      popupAnchor: [0, -20]
-    });
-    const russiaxukraineceasefirebymarch312026 = L.icon({
-      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Frussia-x-ukraine-ceasefire-before-july-GSNGh26whPic.jpg&w=96&q=100',
-      iconSize: [20, 20],
-      iconAnchor: [10, 20],
-      popupAnchor: [0, -20]
-    });
-    const russiaxukraineceasefirebynovember30 = L.icon({
-      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Frussia-x-ukraine-ceasefire-in-2025-w2voYOygx80B.jpg&w=96&q=100',
-      iconSize: [20, 20],
-      iconAnchor: [10, 20],
-      popupAnchor: [0, -20]
-    });
-    const russiaxukraineceasefirein2025 = L.icon({
-      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Frussia-x-ukraine-ceasefire-in-2025-w2voYOygx80B.jpg&w=96&q=100',
-      iconSize: [20, 20],
-      iconAnchor: [10, 20],
-      popupAnchor: [0, -20]
-    });
-    const trumpputinandzelenskymeetogetherbydecember31 = L.icon({
-      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Ftrump-putin-and-zelensky-meet-together-by-august-31-9gdal3QDroDU.jpg&w=96&q=100',
-      iconSize: [20, 20],
-      iconAnchor: [10, 20],
-      popupAnchor: [0, -20]
-    });
-    const trumpputinandzelenskyseentogetherin2025 = L.icon({
-      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Ftrump-putin-and-zelensky-seen-together-by-august-31-eTFUjgQXl8zo.jpg&w=96&q=100',
-      iconSize: [20, 20],
-      iconAnchor: [10, 20],
-      popupAnchor: [0, -20]
-    });
-    const ukraineagreesnottojoinnatobefore2027 = L.icon({
-      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fukraine-agrees-not-to-join-nato-before-july-vKEDpScXuAtt.jpg&w=96&q=100',
-      iconSize: [20, 20],
-      iconAnchor: [10, 20],
-      popupAnchor: [0, -20]
-    });
-    const ukraineagreesnottojoinnatoin2025 = L.icon({
-      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fukraine-agrees-not-to-join-nato-before-july-vKEDpScXuAtt.jpg&w=96&q=100',
-      iconSize: [20, 20],
-      iconAnchor: [10, 20],
-      popupAnchor: [0, -20]
-    });
-    const ukraineagreestolimitsizeofarmedforcesbefore2027 = L.icon({
-      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fukraine-agrees-to-limit-size-of-armed-forces-before-2027-vdW-blMbPD2R.jpg&w=96&q=100',
-      iconSize: [20, 20],
-      iconAnchor: [10, 20],
-      popupAnchor: [0, -20]
-    });
-    const ukraineagreestousapprovedpeaceplanbythursday = L.icon({
-      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fukraine-agrees-to-us-approved-peace-plan-by-november-27-QvQA4rEWmpqh.jpg&w=96&q=100',
-      iconSize: [20, 20],
-      iconAnchor: [10, 20],
-      popupAnchor: [0, -20]
-    });
-    const ukraineelectioncalledby = L.icon({
-      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fukraine-election-scheduled-in-2025-a5A5LV93aoXr.jpg&w=96&q=100',
-      iconSize: [20, 20],
-      iconAnchor: [10, 20],
-      popupAnchor: [0, -20]
-    });
-    const ukraineelectionheldby = L.icon({
-      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fukraine-election-held-in-2025-H6Udnejt6bIP.jpg&w=96&q=100',
-      iconSize: [20, 20],
-      iconAnchor: [10, 20],
-      popupAnchor: [0, -20]
-    });
-    const ukrainesignspeacedealwithrussiabefore2027 = L.icon({
-      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fukraine-signs-peace-deal-with-russia-in-2025-WeLU-mVDz9Ox.png&w=96&q=100',
-      iconSize: [20, 20],
-      iconAnchor: [10, 20],
-      popupAnchor: [0, -20]
-    });
-    const ukrainesignspeacedealwithrussiabymarch31 = L.icon({
-      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fukraine-signs-peace-deal-with-russia-in-2025-WeLU-mVDz9Ox.png&w=96&q=100',
-      iconSize: [20, 20],
-      iconAnchor: [10, 20],
-      popupAnchor: [0, -20]
-    });
-    const ukrainesignspeacedealwithrussiain2025 = L.icon({
-      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fukraine-signs-peace-deal-with-russia-in-2025-WeLU-mVDz9Ox.png&w=96&q=100',
-      iconSize: [20, 20],
-      iconAnchor: [10, 20],
-      popupAnchor: [0, -20]
-    });
-    const ukrainetomahawkmissilestrikebydecember31 = L.icon({
-      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fwill-ukraine-strike-with-tomahawk-missiles-by-october-31-i6-H7tXvijL-.jpg&w=96&q=100',
-      iconSize: [20, 20],
-      iconAnchor: [10, 20],
-      popupAnchor: [0, -20]
-    });
-    const usrecognizesrussiansovereigntyovertukraine = L.icon({
-      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fus-recognizes-russian-sovereignty-over-ukraine-5-k1BZX5skK1.jpg&w=96&q=100',
-      iconSize: [20, 20],
-      iconAnchor: [10, 20],
-      popupAnchor: [0, -20]
-    });
-    const usrecognizesrussiansovereigntyovertukrainebefore2027 = L.icon({
-      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fus-recognizes-russian-sovereignty-over-ukraine-5-k1BZX5skK1.jpg&w=96&q=100',
-      iconSize: [20, 20],
-      iconAnchor: [10, 20],
-      popupAnchor: [0, -20]
-    });
-    const wherewillzelenskyyandputinmeetnext = L.icon({
-      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fwill-trump-and-putin-meet-next-in-another-country-754-536-882-631-152-Sivx1Fw9C2UJ.jpg&w=96&q=100',
-      iconSize: [20, 20],
-      iconAnchor: [10, 20],
-      popupAnchor: [0, -20]
-    });
-    const wherewillzelenskyyandputinmeetnextbefore2027 = L.icon({
-      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fwill-trump-and-putin-meet-next-in-another-country-754-536-882-631-152-Sivx1Fw9C2UJ.jpg&w=96&q=100',
-      iconSize: [20, 20],
-      iconAnchor: [10, 20],
-      popupAnchor: [0, -20]
-    });
-    const willputinmeetwithzelenskyybyjune302026 = L.icon({
-      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fwill-putin-meet-with-zelenskyy-by-june-30-2026-oZqHqcIyNutL.jpg&w=96&q=100',
-      iconSize: [20, 20],
-      iconAnchor: [10, 20],
-      popupAnchor: [0, -20]
-    });
-    const willputinmeetwithzelenskyyin2025 = L.icon({
-      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fwill-putin-meet-with-zelenskyy-before-june-Ni-KJT_bB_Ax.jpg&w=96&q=100',
-      iconSize: [20, 20],
-      iconAnchor: [10, 20],
-      popupAnchor: [0, -20]
-    });
-    const willtrumpsendtomahawktoukraineby = L.icon({
-      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fwill-trump-send-tomahawk-to-ukraine-onXWEKjH8Oii.jpg&w=96&q=100',
-      iconSize: [20, 20],
-      iconAnchor: [10, 20],
-      popupAnchor: [0, -20]
-    });
-    const willukraineagreetocedeterritorytorussiabefore2027 = L.icon({
-      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fwill-ukraine-agree-to-cede-territory-to-russia-Cu1RIKFPKl3v.jpg&w=96&q=100',
-      iconSize: [20, 20],
-      iconAnchor: [10, 20],
-      popupAnchor: [0, -20]
-    });
-    const zelenskyresignsin2025 = L.icon({
-      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fzelensky-resigns-in-2025-9hbR6HX6MrOq.jpg&w=96&q=100',
-      iconSize: [20, 20],
-      iconAnchor: [10, 20],
-      popupAnchor: [0, -20]
-    });
-    const zelenskyyoutasukrainepresidentbyendof2026 = L.icon({
-      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fzelenskyy-out-as-ukraine-president-by-october-31-vvfzvJSdhPij.jpg&w=96&q=100',
-      iconSize: [20, 20],
-      iconAnchor: [10, 20],
-      popupAnchor: [0, -20]
-    });
-    const zelenskyyoutasukrainepresidentbydecember31 = L.icon({
-      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fzelenskyy-out-as-ukraine-president-by-october-31-vvfzvJSdhPij.jpg&w=96&q=100',
-      iconSize: [20, 20],
-      iconAnchor: [10, 20],
-      popupAnchor: [0, -20]
-    });
+      className: 'custom-icon'
+    };
 
     // 4. маркеры
     const markers = [
@@ -288,184 +118,10 @@
         coords: [48.3794, 31.1656],
         link: 'https://polymarket.com/event/putin-and-zelenskyy-shake-hands-by-june-30?via=polymap',
         icon: putinandzelenskyyshakehandsbyjune30
-      },
-      {
-        name: 'Putin and Zelenskyy shake hands in 2025?',
-        coords: [48.3794, 31.1656],
-        link: 'https://polymarket.com/event/putin-and-zelenskyy-shake-hands-by-october-31?via=polymap',
-        icon: putinandzelenskyyshakehandsin2025
-      },
-      {
-        name: 'Russia x Ukraine buffer zone agreement by December 31?',
-        coords: [48.3794, 31.1656],
-        link: 'https://polymarket.com/event/russia-x-ukraine-buffer-zone-agreement-by-december-31?via=polymap',
-        icon: russiaxukrainebufferzoneagreementbydecember31
-      },
-      {
-        name: 'Russia x Ukraine ceasefire by end of 2026?',
-        coords: [48.3794, 31.1656],
-        link: 'https://polymarket.com/event/russia-x-ukraine-ceasefire-before-2027?via=polymap',
-        icon: russiaxukraineceasefirebyendof2026
-      },
-      {
-        name: 'Russia x Ukraine ceasefire by March 31, 2026?',
-        coords: [48.3794, 31.1656],
-        link: 'https://polymarket.com/event/russia-x-ukraine-ceasefire-by-march-31-2026?via=polymap',
-        icon: russiaxukraineceasefirebymarch312026
-      },
-      {
-        name: 'Russia x Ukraine ceasefire by November 30?',
-        coords: [48.3794, 31.1656],
-        link: 'https://polymarket.com/event/russia-x-ukraine-ceasefire-by-november-30-513?via=polymap',
-        icon: russiaxukraineceasefirebynovember30
-      },
-      {
-        name: 'Russia x Ukraine ceasefire in 2025?',
-        coords: [48.3794, 31.1656],
-        link: 'https://polymarket.com/event/russia-x-ukraine-ceasefire-in-2025?via=polymap',
-        icon: russiaxukraineceasefirein2025
-      },
-      {
-        name: 'Trump, Putin, and Zelensky meet together by December 31?',
-        coords: [48.3794, 31.1656],
-        link: 'https://polymarket.com/event/trump-putin-and-zelensky-meet-together-by-december-31?via=polymap',
-        icon: trumpputinandzelenskymeetogetherbydecember31
-      },
-      {
-        name: 'Trump, Putin, and Zelensky seen together in 2025?',
-        coords: [48.3794, 31.1656],
-        link: 'https://polymarket.com/event/trump-putin-and-zelensky-seen-together-in-2025?via=polymap',
-        icon: trumpputinandzelenskyseentogetherin2025
-      },
-      {
-        name: 'Ukraine agrees not to join NATO before 2027?',
-        coords: [48.3794, 31.1656],
-        link: 'https://polymarket.com/event/ukraine-agrees-not-to-join-nato-before-2027?via=polymap',
-        icon: ukraineagreesnottojoinnatobefore2027
-      },
-      {
-        name: 'Ukraine agrees not to join NATO in 2025?',
-        coords: [48.3794, 31.1656],
-        link: 'https://polymarket.com/event/ukraine-agrees-not-to-join-nato-before-july?via=polymap',
-        icon: ukraineagreesnottojoinnatoin2025
-      },
-      {
-        name: 'Ukraine agrees to limit size of armed forces before 2027?',
-        coords: [48.3794, 31.1656],
-        link: 'https://polymarket.com/event/ukraine-agrees-to-limit-size-of-armed-forces-before-2027?via=polymap',
-        icon: ukraineagreestolimitsizeofarmedforcesbefore2027
-      },
-      {
-        name: 'Ukraine agrees to US-approved peace plan by Thursday?',
-        coords: [48.3794, 31.1656],
-        link: 'https://polymarket.com/event/ukraine-agrees-to-us-approved-peace-plan-by-thursday?via=polymap',
-        icon: ukraineagreestousapprovedpeaceplanbythursday
-      },
-      {
-        name: 'Ukraine election called by...?',
-        coords: [48.3794, 31.1656],
-        link: 'https://polymarket.com/event/ukraine-election-called-in-2025?via=polymap',
-        icon: ukraineelectioncalledby
-      },
-      {
-        name: 'Ukraine election held by...?',
-        coords: [48.3794, 31.1656],
-        link: 'https://polymarket.com/event/ukraine-election-held-in-2025?via=polymap',
-        icon: ukraineelectionheldby
-      },
-      {
-        name: 'Ukraine signs peace deal with Russia before 2027?',
-        coords: [48.3794, 31.1656],
-        link: 'https://polymarket.com/event/ukraine-signs-peace-deal-with-russia-before-2027?via=polymap',
-        icon: ukrainesignspeacedealwithrussiabefore2027
-      },
-      {
-        name: 'Ukraine signs peace deal with Russia by March 31?',
-        coords: [48.3794, 31.1656],
-        link: 'https://polymarket.com/event/ukraine-signs-peace-deal-with-russia-by-march-31?via=polymap',
-        icon: ukrainesignspeacedealwithrussiabymarch31
-      },
-      {
-        name: 'Ukraine signs peace deal with Russia in 2025?',
-        coords: [48.3794, 31.1656],
-        link: 'https://polymarket.com/event/ukraine-signs-peace-deal-with-russia-in-2025?via=polymap',
-        icon: ukrainesignspeacedealwithrussiain2025
-      },
-      {
-        name: 'Ukraine Tomahawk missile strike by December 31?',
-        coords: [48.3794, 31.1656],
-        link: 'https://polymarket.com/event/ukraine-tomahawk-strike-by-december-31?via=polymap',
-        icon: ukrainetomahawkmissilestrikebydecember31
-      },
-      {
-        name: 'US recognizes Russian sovereignty over Ukraine?',
-        coords: [48.3794, 31.1656],
-        link: 'https://polymarket.com/event/us-recognizes-russian-sovereignty-over-ukraine?via=polymap',
-        icon: usrecognizesrussiansovereigntyovertukraine
-      },
-      {
-        name: 'US recognizes Russian sovereignty over Ukraine before 2027?',
-        coords: [48.3794, 31.1656],
-        link: 'https://polymarket.com/event/us-recognizes-russian-sovereignty-over-ukraine-before-2027?via=polymap',
-        icon: usrecognizesrussiansovereigntyovertukrainebefore2027
-      },
-      {
-        name: 'Where will Zelenskyy and Putin meet next?',
-        coords: [48.3794, 31.1656],
-        link: 'https://polymarket.com/event/where-will-trump-and-putin-meet-next-393?via=polymap',
-        icon: wherewillzelenskyyandputinmeetnext
-      },
-      {
-        name: 'Where will Zelenskyy and Putin meet next before 2027?',
-        coords: [48.3794, 31.1656],
-        link: 'https://polymarket.com/event/where-will-zelenskyy-and-putin-meet-next?via=polymap',
-        icon: wherewillzelenskyyandputinmeetnextbefore2027
-      },
-      {
-        name: 'Will Putin meet with Zelenskyy by June 30, 2026?',
-        coords: [48.3794, 31.1656],
-        link: 'https://polymarket.com/event/will-putin-meet-with-zelenskyy-by-june-30-2026?via=polymap',
-        icon: willputinmeetwithzelenskyybyjune302026
-      },
-      {
-        name: 'Will Putin meet with Zelenskyy in 2025?',
-        coords: [48.3794, 31.1656],
-        link: 'https://polymarket.com/event/will-putin-meet-with-zelenskyy-in-2025?via=polymap',
-        icon: willputinmeetwithzelenskyyin2025
-      },
-      {
-        name: 'Will Trump send Tomahawk to Ukraine by...?',
-        coords: [48.3794, 31.1656],
-        link: 'https://polymarket.com/event/will-trump-send-tomahawk-to-ukraine?via=polymap',
-        icon: willtrumpsendtomahawktoukraineby
-      },
-      {
-        name: 'Will Ukraine agree to cede territory to Russia before 2027?',
-        coords: [48.3794, 31.1656],
-        link: 'https://polymarket.com/event/will-ukraine-agree-to-cede-territory-to-russia-before-2027?via=polymap',
-        icon: willukraineagreetocedeterritorytorussiabefore2027
-      },
-      {
-        name: 'Zelensky resigns in 2025?',
-        coords: [48.3794, 31.1656],
-        link: 'https://polymarket.com/event/zelensky-resigns-in-2025?via=polymap',
-        icon: zelenskyresignsin2025
-      },
-      {
-        name: 'Zelenskyy out as Ukraine president by end of 2026?',
-        coords: [48.3794, 31.1656],
-        link: 'https://polymarket.com/event/zelenskyy-out-as-ukraine-president-before-2027?via=polymap',
-        icon: zelenskyyoutasukrainepresidentbyendof2026
-      },
-      {
-        name: 'Zelenskyy out as Ukraine president by December 31?',
-        coords: [48.3794, 31.1656],
-        link: 'https://polymarket.com/event/zelenskyy-out-as-ukraine-president-by-december-31?via=polymap',
-        icon: zelenskyyoutasukrainepresidentbydecember31
       }
     ];
 
-// 5. рисуем маркеры + раскладываем дубликаты по кругам
+    // 5. рисуем маркеры + раскладываем дубликаты по кругам
     const coordCounts = {};
 
     markers.forEach(m => {
