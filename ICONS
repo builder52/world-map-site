@@ -16,176 +16,176 @@
       iconAnchor: [10, 20],
       popupAnchor: [0, -20]
     });
-    const NAME = L.icon({
-      iconUrl: 'URL',
+    const putinandzelenskyyshakehandsin2025 = L.icon({
+      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fputin-and-zelenskyy-shake-hands-by-october-31-AXm08sevgnUp.jpg&w=96&q=100',
       iconSize: [20, 20],
       iconAnchor: [10, 20],
       popupAnchor: [0, -20]
     });
-    const NAME = L.icon({
-      iconUrl: 'URL',
+    const russiaxukrainebufferzoneagreementbydecember31 = L.icon({
+      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Frussia-x-ukraine-buffer-zone-by-september-30-CL3auep5Q1qt.jpg&w=96&q=100',
       iconSize: [20, 20],
       iconAnchor: [10, 20],
       popupAnchor: [0, -20]
     });
-    const NAME = L.icon({
-      iconUrl: 'URL',
+    const russiaxukraineceasefirebyendof2026 = L.icon({
+      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Frussia-x-ukraine-ceasefire-in-2025-w2voYOygx80B.jpg&w=96&q=100',
       iconSize: [20, 20],
       iconAnchor: [10, 20],
       popupAnchor: [0, -20]
     });
-    const NAME = L.icon({
-      iconUrl: 'URL',
+    const russiaxukraineceasefirebymarch312026 = L.icon({
+      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Frussia-x-ukraine-ceasefire-before-july-GSNGh26whPic.jpg&w=96&q=100',
       iconSize: [20, 20],
       iconAnchor: [10, 20],
       popupAnchor: [0, -20]
     });
-    const NAME = L.icon({
-      iconUrl: 'URL',
+    const russiaxukraineceasefirebynovember30 = L.icon({
+      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Frussia-x-ukraine-ceasefire-in-2025-w2voYOygx80B.jpg&w=96&q=100',
       iconSize: [20, 20],
       iconAnchor: [10, 20],
       popupAnchor: [0, -20]
     });
-    const NAME = L.icon({
-      iconUrl: 'URL',
+    const russiaxukraineceasefirein2025 = L.icon({
+      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Frussia-x-ukraine-ceasefire-in-2025-w2voYOygx80B.jpg&w=96&q=100',
       iconSize: [20, 20],
       iconAnchor: [10, 20],
       popupAnchor: [0, -20]
     });
-    const NAME = L.icon({
-      iconUrl: 'URL',
+    const trumpputinandzelenskymeetogetherbydecember31 = L.icon({
+      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Ftrump-putin-and-zelensky-meet-together-by-august-31-9gdal3QDroDU.jpg&w=96&q=100',
       iconSize: [20, 20],
       iconAnchor: [10, 20],
       popupAnchor: [0, -20]
     });
-    const NAME = L.icon({
-      iconUrl: 'URL',
+    const trumpputinandzelenskyseentogetherin2025 = L.icon({
+      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Ftrump-putin-and-zelensky-seen-together-by-august-31-eTFUjgQXl8zo.jpg&w=96&q=100',
       iconSize: [20, 20],
       iconAnchor: [10, 20],
       popupAnchor: [0, -20]
     });
-    const NAME = L.icon({
-      iconUrl: 'URL',
+    const ukraineagreesnottojoinnatobefore2027 = L.icon({
+      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fukraine-agrees-not-to-join-nato-before-july-vKEDpScXuAtt.jpg&w=96&q=100',
       iconSize: [20, 20],
       iconAnchor: [10, 20],
       popupAnchor: [0, -20]
     });
-    const NAME = L.icon({
-      iconUrl: 'URL',
+    const ukraineagreesnottojoinnatoin2025 = L.icon({
+      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fukraine-agrees-not-to-join-nato-before-july-vKEDpScXuAtt.jpg&w=96&q=100',
       iconSize: [20, 20],
       iconAnchor: [10, 20],
       popupAnchor: [0, -20]
     });
-    const NAME = L.icon({
-      iconUrl: 'URL',
+    const ukraineagreestolimitsizeofarmedforcesbefore2027 = L.icon({
+      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fukraine-agrees-to-limit-size-of-armed-forces-before-2027-vdW-blMbPD2R.jpg&w=96&q=100',
       iconSize: [20, 20],
       iconAnchor: [10, 20],
       popupAnchor: [0, -20]
     });
-    const NAME = L.icon({
-      iconUrl: 'URL',
+    const ukraineagreestousapprovedpeaceplanbythursday = L.icon({
+      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fukraine-agrees-to-us-approved-peace-plan-by-november-27-QvQA4rEWmpqh.jpg&w=96&q=100',
       iconSize: [20, 20],
       iconAnchor: [10, 20],
       popupAnchor: [0, -20]
     });
-    const NAME = L.icon({
-      iconUrl: 'URL',
+    const ukraineelectioncalledby = L.icon({
+      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fukraine-election-scheduled-in-2025-a5A5LV93aoXr.jpg&w=96&q=100',
       iconSize: [20, 20],
       iconAnchor: [10, 20],
       popupAnchor: [0, -20]
     });
-    const NAME = L.icon({
-      iconUrl: 'URL',
+    const ukraineelectionheldby = L.icon({
+      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fukraine-election-held-in-2025-H6Udnejt6bIP.jpg&w=96&q=100',
       iconSize: [20, 20],
       iconAnchor: [10, 20],
       popupAnchor: [0, -20]
     });
-    const NAME = L.icon({
-      iconUrl: 'URL',
+    const ukrainesignspeacedealwithrussiabefore2027 = L.icon({
+      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fukraine-signs-peace-deal-with-russia-in-2025-WeLU-mVDz9Ox.png&w=96&q=100',
       iconSize: [20, 20],
       iconAnchor: [10, 20],
       popupAnchor: [0, -20]
     });
-    const NAME = L.icon({
-      iconUrl: 'URL',
+    const ukrainesignspeacedealwithrussiabymarch31 = L.icon({
+      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fukraine-signs-peace-deal-with-russia-in-2025-WeLU-mVDz9Ox.png&w=96&q=100',
       iconSize: [20, 20],
       iconAnchor: [10, 20],
       popupAnchor: [0, -20]
     });
-    const NAME = L.icon({
-      iconUrl: 'URL',
+    const ukrainesignspeacedealwithrussiain2025 = L.icon({
+      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fukraine-signs-peace-deal-with-russia-in-2025-WeLU-mVDz9Ox.png&w=96&q=100',
       iconSize: [20, 20],
       iconAnchor: [10, 20],
       popupAnchor: [0, -20]
     });
-    const NAME = L.icon({
-      iconUrl: 'URL',
+    const ukrainetomahawkmissilestrikebydecember31 = L.icon({
+      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fwill-ukraine-strike-with-tomahawk-missiles-by-october-31-i6-H7tXvijL-.jpg&w=96&q=100',
       iconSize: [20, 20],
       iconAnchor: [10, 20],
       popupAnchor: [0, -20]
     });
-    const NAME = L.icon({
-      iconUrl: 'URL',
+    const usrecognizesrussiansovereigntyovertukraine = L.icon({
+      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fus-recognizes-russian-sovereignty-over-ukraine-5-k1BZX5skK1.jpg&w=96&q=100',
       iconSize: [20, 20],
       iconAnchor: [10, 20],
       popupAnchor: [0, -20]
     });
-    const NAME = L.icon({
-      iconUrl: 'URL',
+    const usrecognizesrussiansovereigntyovertukrainebefore2027 = L.icon({
+      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fus-recognizes-russian-sovereignty-over-ukraine-5-k1BZX5skK1.jpg&w=96&q=100',
       iconSize: [20, 20],
       iconAnchor: [10, 20],
       popupAnchor: [0, -20]
     });
-    const NAME = L.icon({
-      iconUrl: 'URL',
+    const wherewillzelenskyyandputinmeetnext = L.icon({
+      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fwill-trump-and-putin-meet-next-in-another-country-754-536-882-631-152-Sivx1Fw9C2UJ.jpg&w=96&q=100',
       iconSize: [20, 20],
       iconAnchor: [10, 20],
       popupAnchor: [0, -20]
     });
-    const NAME = L.icon({
-      iconUrl: 'URL',
+    const wherewillzelenskyyandputinmeetnextbefore2027 = L.icon({
+      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fwill-trump-and-putin-meet-next-in-another-country-754-536-882-631-152-Sivx1Fw9C2UJ.jpg&w=96&q=100',
       iconSize: [20, 20],
       iconAnchor: [10, 20],
       popupAnchor: [0, -20]
     });
-    const NAME = L.icon({
-      iconUrl: 'URL',
+    const willputinmeetwithzelenskyybyjune302026 = L.icon({
+      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fwill-putin-meet-with-zelenskyy-by-june-30-2026-oZqHqcIyNutL.jpg&w=96&q=100',
       iconSize: [20, 20],
       iconAnchor: [10, 20],
       popupAnchor: [0, -20]
     });
-    const NAME = L.icon({
-      iconUrl: 'URL',
+    const willputinmeetwithzelenskyyin2025 = L.icon({
+      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fwill-putin-meet-with-zelenskyy-before-june-Ni-KJT_bB_Ax.jpg&w=96&q=100',
       iconSize: [20, 20],
       iconAnchor: [10, 20],
       popupAnchor: [0, -20]
     });
-    const NAME = L.icon({
-      iconUrl: 'URL',
+    const willtrumpsendtomahawktoukraineby = L.icon({
+      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fwill-trump-send-tomahawk-to-ukraine-onXWEKjH8Oii.jpg&w=96&q=100',
       iconSize: [20, 20],
       iconAnchor: [10, 20],
       popupAnchor: [0, -20]
     });
-    const NAME = L.icon({
-      iconUrl: 'URL',
+    const willukraineagreetocedeterritorytorussiabefore2027 = L.icon({
+      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fwill-ukraine-agree-to-cede-territory-to-russia-Cu1RIKFPKl3v.jpg&w=96&q=100',
       iconSize: [20, 20],
       iconAnchor: [10, 20],
       popupAnchor: [0, -20]
     });
-    const NAME = L.icon({
-      iconUrl: 'URL',
+    const zelenskyresignsin2025 = L.icon({
+      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fzelensky-resigns-in-2025-9hbR6HX6MrOq.jpg&w=96&q=100',
       iconSize: [20, 20],
       iconAnchor: [10, 20],
       popupAnchor: [0, -20]
     });
-    const NAME = L.icon({
-      iconUrl: 'URL',
+    const zelenskyyoutasukrainepresidentbyendof2026 = L.icon({
+      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fzelenskyy-out-as-ukraine-president-by-october-31-vvfzvJSdhPij.jpg&w=96&q=100',
       iconSize: [20, 20],
       iconAnchor: [10, 20],
       popupAnchor: [0, -20]
     });
-    const NAME = L.icon({
-      iconUrl: 'URL',
+    const zelenskyyoutasukrainepresidentbydecember31 = L.icon({
+      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fzelenskyy-out-as-ukraine-president-by-october-31-vvfzvJSdhPij.jpg&w=96&q=100',
       iconSize: [20, 20],
       iconAnchor: [10, 20],
       popupAnchor: [0, -20]
