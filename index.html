@@ -117,41 +117,48 @@
       }
     ];
 
-   // 5. рисуем маркеры + раздвигаем дубликаты «веером»
-const coordCounts = {};
+    // 5. рисуем маркеры + раскладываем дубликаты по кругам
+    const coordCounts = {};
 
-markers.forEach(m => {
-  const key = m.coords.join(',');
-  const index = coordCounts[key] || 0;  
-  coordCounts[key] = index + 1;
+    markers.forEach(m => {
+      const key = m.coords.join(',');
+      const index = coordCounts[key] || 0;  // какой по счёту маркер на этих координатах
+      coordCounts[key] = index + 1;
 
-  const opts = {};
-  if (m.icon) opts.icon = m.icon;
+      const opts = {};
+      if (m.icon) opts.icon = m.icon;
 
-  const marker = L.marker(m.coords, opts).addTo(map);
+      const marker = L.marker(m.coords, opts).addTo(map);
 
-marker.bindPopup(
-  `<a href="${m.link}" target="_blank">${m.name}</a>`
-);
+      marker.bindPopup(
+        `<a href="${m.link}" target="_blank">${m.name}</a>`
+      );
 
-  setTimeout(() => {
-    const el = marker.getElement();
-    if (!el) return;
+      setTimeout(() => {
+        const el = marker.getElement();
+        if (!el) return;
 
-    el.classList.add('glow-icon');
+        el.classList.add('glow-icon');
 
-    if (index > 0) {
-      const radius = 5; // расстояние между иконками в пикселях
-      const angle = (index - 1) * 5; // шаг угла в градусах
+        // если это не первый маркер на этих координатах — разносим по кругам
+        if (index > 0) {
+          const RING_SIZE = 12;      // сколько иконок максимум в одном "кольце"
+          const RADIUS_STEP = 26;    // расстояние между кольцами (px)
 
-      const x = Math.cos(angle * Math.PI / 180) * radius;
-      const y = Math.sin(angle * Math.PI / 180) * radius;
+          const ring = Math.floor((index - 1) / RING_SIZE) + 1;  // номер круга (1,2,3,...)
+          const posInRing = (index - 1) % RING_SIZE;             // позиция внутри круга
 
-      el.style.marginLeft = `${x}px`;
-      el.style.marginTop = `${y}px`;
-    }
-  }, 0);
-});
+          const angle = (360 / RING_SIZE) * posInRing;           // угол в градусах
+          const radius = ring * RADIUS_STEP;                     // радиус этого круга
+
+          const x = Math.cos(angle * Math.PI / 180) * radius;
+          const y = Math.sin(angle * Math.PI / 180) * radius;
+
+          el.style.marginLeft = `${x}px`;
+          el.style.marginTop = `${y}px`;
+        }
+      }, 0);
+    });
 
     console.log('markers added');
   </script>
