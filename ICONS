@@ -1,17 +1,17 @@
-    const AhmedalSharaaoutasleaderofSyriabefore2027 = L.icon({
-      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fahmed-al-sharaa-out-as-leader-of-syria-by-august-31-jw07b2UurIIh.jpg&w=96&q=100',
+    const NAME = L.icon({
+      iconUrl: 'URL',
       iconSize: [20, 20],
       iconAnchor: [10, 20],
       popupAnchor: [0, -20]
     });
-    const AhmedalSharaaoutasleaderofSyriain2025 = L.icon({
-      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fahmed-al-sharaa-out-as-leader-of-syria-by-august-31-jw07b2UurIIh.jpg&w=96&q=100',
+    const NAME = L.icon({
+      iconUrl: 'URL',
       iconSize: [20, 20],
       iconAnchor: [10, 20],
       popupAnchor: [0, -20]
     });
-    const AbdulMalikoutasleaderofHouthisby = L.icon({
-      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fabdul-malik-out-as-leader-of-houthis-by-september-30-Mo5xCY5XbsZe.png&w=96&q=100',
+    const NAME = L.icon({
+      iconUrl: 'URL',
       iconSize: [20, 20],
       iconAnchor: [10, 20],
       popupAnchor: [0, -20]
