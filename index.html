@@ -514,12 +514,29 @@ function updateMarkers() {
     detailedMarkers.forEach(m => map.addLayer(m));
   }
 }
+// 🔍 масштабируем иконки в зависимости от уровня зума
+function updateMarkerScale() {
+  const z = map.getZoom();
 
-// следим за зумом
-map.on('zoomend', updateMarkers);
+  // базовая формула: чем больше зум, тем больше иконки
+  let scale = 0.7 + (z - 2) * 0.15; // при z=2 ~0.7, при z=6 ~1.3
 
-// первый запуск
-updateMarkers();
+  // ограничим, чтобы не были слишком маленькими/огромными
+  if (scale < 0.5) scale = 0.5;
+  if (scale > 2)   scale = 2;
+
+  // применяем масштаб ко всем иконкам
+  document.querySelectorAll('.leaflet-marker-icon').forEach(el => {
+    el.style.transform = `scale(${scale})`;
+  });
+}
+
+// обновляем при каждом изменении зума
+map.on('zoomend', updateMarkerScale);
+
+// и один раз при загрузке карты
+updateMarkerScale();
+
     console.log('markers added');
   </script>
 </body>
