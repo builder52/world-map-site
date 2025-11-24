@@ -20,6 +20,35 @@
   .glow-icon:hover {
     filter: drop-shadow(0 0 8px #2E5CFF) drop-shadow(0 0 14px #2E5CFF);
   }
+  /* 🎨 цвет окна popup */
+.leaflet-popup-content-wrapper {
+  background: #2E5CFF;
+  color: white;
+  border-radius: 10px;
+  padding: 8px;
+}
+
+/* 🎨 цвет «хвостика» окна */
+.leaflet-popup-tip {
+  background: #2E5CFF;
+}
+
+/* 🎨 удаляем отступы по умолчанию */
+.leaflet-popup-content {
+  margin: 6px 8px;
+}
+
+/* 🎨 делаем ссылку белой */
+.leaflet-popup-content a {
+  color: white;
+  font-weight: bold;
+  text-decoration: underline; /* можешь убрать */
+}
+
+/* 🎨 делаем крестик (close button) белым */
+.leaflet-popup-close-button {
+  color: white !important;
+}
 </style>
 </head>
 <body>
