@@ -473,8 +473,15 @@
       const index = coordCounts[key] || 0;  // какой по счёту маркер на этих координатах
       coordCounts[key] = index + 1;
 
-      const opts = {};
-      if (m.icon) opts.icon = m.icon;
+      const opts = {
+        icon: L.divIcon({
+          className: m.icon.className, // применяем наш кастомный класс
+          html: `<div class="custom-icon" style="background-image: url(${m.icon.iconUrl})"></div>`,
+          iconSize: [20, 20],
+          iconAnchor: [10, 20],
+          popupAnchor: [0, -20]
+        })
+      };
 
       const marker = L.marker(m.coords, opts).addTo(map);
 
@@ -499,10 +506,7 @@
           const angle = (360 / RING_SIZE) * posInRing;           // угол в градусах
           const radius = ring * RADIUS_STEP;                     // радиус этого круга
 
-          // Убираем смещение с marginLeft / marginTop
-          // Мы будем применять transform, чтобы иконки оставались в центре, но увеличивались
-          const scale = 0.7 + (map.getZoom() - 2) * 0.15;
-          el.style.transform = `scale(${scale}) translate(${Math.cos(angle * Math.PI / 180) * radius}px, ${Math.sin(angle * Math.PI / 180) * radius}px)`;
+          el.style.transform = `scale(1) translate(${Math.cos(angle * Math.PI / 180) * radius}px, ${Math.sin(angle * Math.PI / 180) * radius}px)`;
         }
       }, 0);
     });
