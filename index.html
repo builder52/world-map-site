@@ -121,7 +121,7 @@
       }
     ];
 
-    // 5. рисуем маркеры + раскладываем дубликаты по кругам
+    // 5. рисуем маркеры
     const coordCounts = {};
 
     markers.forEach(m => {
@@ -145,13 +145,12 @@
         `<a href="${m.link}" target="_blank">${m.name}</a>`
       );
 
+      // Для иконок сдвига по кругу
       setTimeout(() => {
         const el = marker.getElement();
         if (!el) return;
 
         el.classList.add('glow-icon');
-
-        // если это не первый маркер на этих координатах — разносим по кругам
         if (index > 0) {
           const RING_SIZE = 12;      // сколько иконок максимум в одном "кольце"
           const RADIUS_STEP = 26;    // расстояние между кольцами (px)
@@ -162,11 +161,9 @@
           const angle = (360 / RING_SIZE) * posInRing;           // угол в градусах
           const radius = ring * RADIUS_STEP;                     // радиус этого круга
 
-          // Сдвигаем маркер по координатам
-          const latlng = map.layerPointToLatLng(map.latLngToLayerPoint(m.coords));
-          latlng.lat += Math.sin(angle * Math.PI / 180) * radius / 100000;
-          latlng.lng += Math.cos(angle * Math.PI / 180) * radius / 100000;
-          marker.setLatLng(latlng);  // Устанавливаем новые координаты
+          // Просто изменяем размер (масштабирование) иконок по мере изменения зума
+          const scale = 0.7 + (map.getZoom() - 2) * 0.15;
+          el.style.transform = `scale(${scale}) translate(${Math.cos(angle * Math.PI / 180) * radius}px, ${Math.sin(angle * Math.PI / 180) * radius}px)`;
         }
       }, 0);
     });
@@ -175,10 +172,8 @@
     function updateMarkerScale() {
       const z = map.getZoom();
 
-      // базовая формула: чем больше зум, тем больше иконки
       let scale = 0.7 + (z - 2) * 0.15; // при z=2 ~0.7, при z=6 ~1.3
 
-      // ограничим, чтобы не были слишком маленькими/огромными
       if (scale < 0.5) scale = 0.5;
       if (scale > 2)   scale = 2;
 
