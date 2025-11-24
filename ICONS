@@ -1,3 +1,309 @@
+    const eunatocountryannouncespeacekeepingforceinukraine = L.icon({
+      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Feunato-country-announces-peacekeeping-force-in-ukraine-FGU2DfeSjhiB.jpg&w=96&q=100',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const natoeutroopsfightinginukraineby = L.icon({
+      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fnatoeu-troops-fighting-in-ukraine-in-2025-ed2fIguRcJLj.jpg&w=96&q=100',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const putinandzelenskyyshakehandsbyjune30 = L.icon({
+      iconUrl: 'https://polymarket.com/_next/image?url=https%3A%2F%2Fpolymarket-upload.s3.us-east-2.amazonaws.com%2Fputin-and-zelenskyy-shake-hands-by-october-31-AXm08sevgnUp.jpg&w=96&q=100',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const NAME = L.icon({
+      iconUrl: 'URL',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const NAME = L.icon({
+      iconUrl: 'URL',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const NAME = L.icon({
+      iconUrl: 'URL',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const NAME = L.icon({
+      iconUrl: 'URL',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const NAME = L.icon({
+      iconUrl: 'URL',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const NAME = L.icon({
+      iconUrl: 'URL',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const NAME = L.icon({
+      iconUrl: 'URL',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const NAME = L.icon({
+      iconUrl: 'URL',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const NAME = L.icon({
+      iconUrl: 'URL',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const NAME = L.icon({
+      iconUrl: 'URL',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const NAME = L.icon({
+      iconUrl: 'URL',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const NAME = L.icon({
+      iconUrl: 'URL',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const NAME = L.icon({
+      iconUrl: 'URL',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const NAME = L.icon({
+      iconUrl: 'URL',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const NAME = L.icon({
+      iconUrl: 'URL',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const NAME = L.icon({
+      iconUrl: 'URL',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const NAME = L.icon({
+      iconUrl: 'URL',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const NAME = L.icon({
+      iconUrl: 'URL',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const NAME = L.icon({
+      iconUrl: 'URL',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const NAME = L.icon({
+      iconUrl: 'URL',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const NAME = L.icon({
+      iconUrl: 'URL',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const NAME = L.icon({
+      iconUrl: 'URL',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const NAME = L.icon({
+      iconUrl: 'URL',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const NAME = L.icon({
+      iconUrl: 'URL',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const NAME = L.icon({
+      iconUrl: 'URL',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const NAME = L.icon({
+      iconUrl: 'URL',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const NAME = L.icon({
+      iconUrl: 'URL',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const NAME = L.icon({
+      iconUrl: 'URL',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const NAME = L.icon({
+      iconUrl: 'URL',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const NAME = L.icon({
+      iconUrl: 'URL',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const NAME = L.icon({
+      iconUrl: 'URL',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const NAME = L.icon({
+      iconUrl: 'URL',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const NAME = L.icon({
+      iconUrl: 'URL',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const NAME = L.icon({
+      iconUrl: 'URL',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const NAME = L.icon({
+      iconUrl: 'URL',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const NAME = L.icon({
+      iconUrl: 'URL',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const NAME = L.icon({
+      iconUrl: 'URL',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const NAME = L.icon({
+      iconUrl: 'URL',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const NAME = L.icon({
+      iconUrl: 'URL',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const NAME = L.icon({
+      iconUrl: 'URL',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const NAME = L.icon({
+      iconUrl: 'URL',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const NAME = L.icon({
+      iconUrl: 'URL',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const NAME = L.icon({
+      iconUrl: 'URL',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const NAME = L.icon({
+      iconUrl: 'URL',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const NAME = L.icon({
+      iconUrl: 'URL',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const NAME = L.icon({
+      iconUrl: 'URL',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const NAME = L.icon({
+      iconUrl: 'URL',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
+    const NAME = L.icon({
+      iconUrl: 'URL',
+      iconSize: [20, 20],
+      iconAnchor: [10, 20],
+      popupAnchor: [0, -20]
+    });
     const NAME = L.icon({
       iconUrl: 'URL',
       iconSize: [20, 20],
